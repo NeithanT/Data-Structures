@@ -6,6 +6,47 @@
     Key aspects:
     - Works mostly on sorted data structures
 """
+# Same Direction
+
+def remove_duplicates(arr):
+
+    """
+        Removes duplicates from a sorted array in-place.
+        Returns the length of the array with unique elements.
+    """
+
+    if not arr:
+        return 0
+
+    left_pointer = 0
+    for right_pointer in range(1, len(arr)):
+        
+        if arr[right_pointer] != arr[left_pointer]:
+            left_pointer += 1
+            arr[left_pointer] = arr[right_pointer]
+
+    return left_pointer + 1
+
+# Fast/Slow Pointer
+
+# Sliding Window
+
+def longest_substring(string):
+    """
+        Finds the length of the longest substring without repeating characters.
+    """
+
+    left_pointer = 0
+    max_length = 0
+    char_map = {}
+
+    for ch_index in range(0,len(string)):
+        continue
+
+    return max_length
+    
+
+# Pointers In Opposite Direction
 
 def search_target(arr, target):
 
@@ -32,9 +73,14 @@ def search_target(arr, target):
 def binary_search(arr, target):
 
     """
-        This function uses binary search, which
-        follows the concept of divide and conquer
-        or the two pointer technique.
+        The binary search algorithm, 
+        where the array is divided in the middle
+        to find the wanted element.
+
+        This can also be applied to monotonic functions
+        or structures, monotonic means it has a constant
+        growth
+        
     """
 
     left_pointer = 0
@@ -51,26 +97,20 @@ def binary_search(arr, target):
 
     return None
 
-# More Two-Pointer Examples
-
-def remove_duplicates(arr):
-
+def find_minimum_rotated_arr(arr):
     """
-        Removes duplicates from a sorted array in-place.
-        Returns the length of the array with unique elements.
+        Leetcode 153
+
+        Given a sorted rotated array
     """
-
-    if not arr:
-        return 0
-
+    
     left_pointer = 0
-    for right_pointer in range(1, len(arr)):
-        [1,2,2,2,4]
-        if arr[right_pointer] != arr[left_pointer]:
-            left_pointer += 1
-            arr[left_pointer] = arr[right_pointer]
+    right_pointer = len(arr) -1
 
-    return left_pointer + 1
+    while left_pointer < right_pointer:
+        continue
+
+    return right_pointer - left_pointer
 
 def reverse_array(arr):
     """
