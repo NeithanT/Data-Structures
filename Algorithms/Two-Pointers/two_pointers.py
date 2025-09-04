@@ -37,14 +37,35 @@ def longest_substring(string):
     """
 
     left_pointer = 0
+    right_pointer = 0
     max_length = 0
     char_map = {}
 
-    for ch_index in range(0,len(string)):
-        continue
+    while right_pointer < len(string):
+
+        if string[right_pointer] in char_map:
+
+            left_pointer = char_map[string[right_pointer]] + 1
+            del char_map[string[right_pointer]]
+            
+
+        else:
+            
+            char_map[string[right_pointer]] = right_pointer
+            right_pointer += 1
+
+            if right_pointer - left_pointer > max_length:
+                max_length = right_pointer - left_pointer
+
 
     return max_length
     
+# Test cases for longest_substring
+
+print(longest_substring("abcabcbb"))
+print(longest_substring("bbbbb"))
+print(longest_substring("pwwkew"))
+
 
 # Pointers In Opposite Direction
 
@@ -140,4 +161,4 @@ def is_palindrome(string):
 
     return True
 
-# TODO Add sorting, quick sort and merge sort, some more
+# TODO Add sorting, quick sort and merge sort, some moremore
